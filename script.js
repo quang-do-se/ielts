@@ -50,11 +50,20 @@ function speak(){
     utterThis.voice = voices[Math.floor(Math.random() * voices.length)];
 
     console.log("Phrase: '" + phrase + "'. Using voice: " + utterThis.voice.name + ", " + utterThis.voice.lang);
+    
+    utterThis.pitch = pitch.value;
+    utterThis.rate = rate.value;
 
-    utterThis.pitch = 1;
-    utterThis.rate = 1;
     synth.speak(utterThis);
   }
+}
+
+pitch.onchange = function() {
+  pitchValue.textContent = pitch.value;
+}
+
+rate.onchange = function() {
+  rateValue.textContent = rate.value;
 }
 
 inputForm.onsubmit = function(event) {
