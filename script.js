@@ -80,6 +80,13 @@ var result = '';
 
 newButton.onclick = function(event) {
   event.preventDefault();
+
+  // reset state
+  guessTxt.value = '';
+  resultTxt.value = '';
+  showResultButton.innerText = 'Show result';
+  showResult = false;
+  
   phrases = [];
   result = '';
   
@@ -100,7 +107,7 @@ repeatButton.onclick = function(event) {
 guessButton.onclick = function(event) {
   event.preventDefault();
 
-  if (guessTxt.value.replace(/\n*$/, '').toLowerCase() === result.replace(/\n*$/, '').toLowerCase()) {
+  if (guessTxt.value.replace(/[\n|\s]*$/mg, '').toLowerCase() === result.replace(/[\n|\s]*$/mg, '').toLowerCase()) {
     guessResult.innerText = 'Correct!';
   } else {
     guessResult.innerText = 'Wrong!';
@@ -114,10 +121,10 @@ showResultButton.onclick = function(event) {
   event.preventDefault();
 
   if (showResult) {
-    resultTxt.innerHTML = '';
+    resultTxt.value = '';
     showResultButton.innerText = 'Show result';
   } else {
-    resultTxt.innerHTML = result;
+    resultTxt.value = result;
     showResultButton.innerText = 'Hide result';
   }
 
