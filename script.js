@@ -89,9 +89,6 @@ newButton.onclick = function(event) {
   }
 
   speak(phrases);
-  
-  // trim last line break
-  result = result.replace(/\n$/, "").toLowerCase();
 }
 
 repeatButton.onclick = function(event) {
@@ -103,7 +100,7 @@ repeatButton.onclick = function(event) {
 guessButton.onclick = function(event) {
   event.preventDefault();
 
-  if (guessTxt.value.toLowerCase() === result) {
+  if (guessTxt.value.replace(/\n*$/, '').toLowerCase() === result.replace(/\n*$/, '').toLowerCase()) {
     guessResult.innerText = 'Correct!';
   } else {
     guessResult.innerText = 'Wrong!';
