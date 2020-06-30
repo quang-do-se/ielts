@@ -83,6 +83,8 @@ newButton.onclick = function(event) {
 
   // reset state
   guessTxt.value = '';
+  guessResult.innerText = '';
+  
   resultTxt.value = '';
   showResultButton.innerText = 'Show result';
   showResult = false;
