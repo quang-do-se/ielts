@@ -107,6 +107,7 @@ var streetSuffix = [
   'ranch',
   'rapid',
   'rest',
+  'residence',
   'ridge',
   'river',
   'road',
