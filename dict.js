@@ -920,5 +920,7 @@ var dict = [
   'robot',
   'proficiency',
   'evolution',
-  'revolution'
+  'revolution',
+  'swimming baths',
+  'sports center'
 ]
