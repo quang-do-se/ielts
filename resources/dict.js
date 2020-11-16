@@ -922,5 +922,15 @@ var dict = [
   'evolution',
   'revolution',
   'swimming baths',
-  'sports center'
+  'sports center',
+  'indigent',
+  'conniving',
+  'emaciated',
+  'rote',
+  'draw on',
+  'cemetery',
+  'romance',
+  'plaque',
+  'theme',
+  'laureate'
 ]
