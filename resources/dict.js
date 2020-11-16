@@ -932,5 +932,8 @@ var dict = [
   'romance',
   'plaque',
   'theme',
-  'laureate'
+  'laureate',
+  'vigilant',
+  'fragility',
+  'anaesthesia'
 ]
