@@ -935,5 +935,14 @@ var dict = [
   'laureate',
   'vigilant',
   'fragility',
-  'anaesthesia'
+  'anaesthesia',
+  'ephemeral',
+  'belligerent',
+  'protagonist',
+  'hybridization',
+  'allele',
+  'pivot',
+  'languish',
+  'reticence',
+  'itinerant'
 ]
