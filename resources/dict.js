@@ -944,5 +944,8 @@ var dict = [
   'pivot',
   'languish',
   'reticence',
-  'itinerant'
+  'itinerant',
+  'debacle',
+  'folly',
+  'impeccable'
 ]
