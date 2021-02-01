@@ -34,7 +34,7 @@ var streetSuffix = [
   'crossroad',
   'curve',
   'dale',
-  'dam'
+  'dam',
   'divide',
   'drive',
   'estate',
@@ -71,7 +71,7 @@ var streetSuffix = [
   'land',
   'landing',
   'lane',
-  'light'
+  'light',
   'loaf',
   'lock',
   'lodge',
@@ -116,7 +116,7 @@ var streetSuffix = [
   'rue',
   'run',
   'shoal',
-  'shore'
+  'shore',
   'skyway',
   'spring',
   'spur',
