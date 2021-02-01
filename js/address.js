@@ -90,7 +90,6 @@ function generatePhrase() {
   // for ( var i = 0; i < 2; i++ ) {
   //   address += characters.charAt(Math.floor(Math.random() * charactersLength));
   // }
-  thisStreetName = 'Cardinal Bourne';
 
   address += thisStreetName;
   // address += " " + thisStreetSuffix;
