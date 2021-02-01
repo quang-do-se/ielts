@@ -5,6 +5,6 @@
 
 
 For testing purpose,
-[street numbers][street letters] [street name] [street suffix], [city], [phone]
+[street numbers][street letters] [street name] [street suffix], [phone]
 
 

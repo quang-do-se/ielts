@@ -114,7 +114,7 @@ var streetSuffix = [
   'Place',
   'Plain',
   'Plaza',
-  'Pleasant'
+  'Pleasant',
   'Point',
   'Port',
   'Prairie',

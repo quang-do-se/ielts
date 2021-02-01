@@ -71,6 +71,12 @@ function speak(phrase){
 
 function generatePhrase() {
   let address = '';
+
+  thisStreetName = streetName[Math.floor(Math.random() * streetName.length)];
+  thisStreetSuffix = streetSuffix[Math.floor(Math.random() * streetSuffix.length)];
+
+  address = "St. Anselm's S t . A n s e l m ' s";
+  
   let phone = '';
 
   for (let i = 0; i < 3; i++) {
@@ -89,7 +95,7 @@ function generatePhrase() {
     phone += Math.floor(Math.random() * 10);
   }
 
-  return addrees + ', ' + phone
+  return address + ', ' + phone
 }
 
 pitch.onchange = function() {
