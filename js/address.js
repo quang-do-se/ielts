@@ -90,13 +90,21 @@ function generatePhrase() {
   // for ( var i = 0; i < 2; i++ ) {
   //   address += characters.charAt(Math.floor(Math.random() * charactersLength));
   // }
-
+  thisStreetName = 'Cardinal Bourne';
 
   address += thisStreetName;
   // address += " " + thisStreetSuffix;
   result = address;
+
+  addressBySpaces = thisStreetName.split(' ');
+  address += ".\n Spelling: ";
   
-  address += ".\n Spelling: " + thisStreetName.split('');
+  for (let i = 0; i < addressBySpaces.length; i++) {
+    address += addressBySpaces[i].split('');
+    if (i < addressBySpaces.length - 1) {
+      address += ".\n space.\n";
+    }
+  }
 
   let phone = '';
 
@@ -116,7 +124,7 @@ function generatePhrase() {
     phone += Math.floor(Math.random() * 10);
   }
 
-  result += ' ' + phone;
+  result += "\n" + phone;
   
   return {
     'phrase': address + ".\n Phone number: " + phone,
