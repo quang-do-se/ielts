@@ -2,3 +2,9 @@
 [city]
 [state], [country]
 [code:alphanumeric]
+
+
+For testing purpose,
+[street numbers][street letters] [street name] [street suffix], [city], [phone]
+
+

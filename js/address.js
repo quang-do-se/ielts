@@ -23,13 +23,15 @@ var voices = [];
 
 function populateVoiceList() {
   voices = synth.getVoices()
-    .filter(voice => voice.lang.match(/^en\-/))
+    .filter(voice => voice.lang.match(/^en\-/) )
     .sort(function (a, b) {
       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
       if ( aname < bname ) return -1;
       else if ( aname == bname ) return 0;
       else return +1;
     });
+  console.log(synth.getVoices());
+  console.log(voices);
 }
 
 populateVoiceList();
@@ -39,32 +41,55 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
   speechSynthesis.onvoiceschanged = populateVoiceList;
 }
 
-function speak(phrases){
+function speak(phrase){
   if (synth.speaking) {
     console.error('speechSynthesis.speaking');
     return;
   }
 
-  for (let i = 0; i < phrases.length; i++) {
-    var utterThis = new SpeechSynthesisUtterance(phrases[i]);
+  let voice = voices[Math.floor(Math.random() * voices.length)];
 
-    utterThis.onend = function (event) {
-      console.log('SpeechSynthesisUtterance.onend');
-    }
+  var utterThis = new SpeechSynthesisUtterance(phrase);
 
-    utterThis.onerror = function (event) {
-      console.error('SpeechSynthesisUtterance.onerror');
-    }
-
-    utterThis.voice = voices[Math.floor(Math.random() * voices.length)];
-
-    console.log("Phrase: '" + phrases[i] + "'. Using voice: " + utterThis.voice.name + ", " + utterThis.voice.lang);
-
-    utterThis.pitch = pitch.value;
-    utterThis.rate = rate.value;
-
-    synth.speak(utterThis);
+  utterThis.onend = function (event) {
+    console.log('SpeechSynthesisUtterance.onend');
   }
+
+  utterThis.onerror = function (event) {
+    console.error('SpeechSynthesisUtterance.onerror');
+  }
+
+  utterThis.voice = voice;
+
+  console.log("Phrase: '" + phrase + "'. Using voice: " + utterThis.voice.name + ", " + utterThis.voice.lang);
+
+  utterThis.pitch = pitch.value;
+  utterThis.rate = rate.value;
+
+  synth.speak(utterThis);
+}
+
+function generatePhrase() {
+  let address = '';
+  let phone = '';
+
+  for (let i = 0; i < 3; i++) {
+    phone += Math.floor(Math.random() * 10);
+  }
+
+  phone += '-';
+  
+  for (let i = 0; i < 3; i++) {
+    phone += Math.floor(Math.random() * 10);
+  }
+
+  phone += '-';
+  
+  for (let i = 0; i < 4; i++) {
+    phone += Math.floor(Math.random() * 10);
+  }
+
+  return addrees + ', ' + phone
 }
 
 pitch.onchange = function() {
@@ -75,7 +100,7 @@ rate.onchange = function() {
   rateValue.textContent = rate.value;
 }
 
-var phrases = [];
+var phrase = '';
 var result = '';
 
 newButton.onclick = function(event) {
@@ -84,26 +109,21 @@ newButton.onclick = function(event) {
   // reset state
   guessTxt.value = '';
   guessResult.innerText = '';
-  
+
   resultTxt.value = '';
   showResultButton.innerText = 'Show result';
   showResult = false;
-  
-  phrases = [];
-  result = '';
-  
-  for (let i = 0; i < 3; i++) {
-    phrases[i] = dict[Math.floor(Math.random() * dict.length)];
-    result += phrases[i] + "\n";
-  }
 
-  speak(phrases);
+  phrase = generatePhrase();
+  result = '';
+
+  speak(phrase);
 }
 
 repeatButton.onclick = function(event) {
   event.preventDefault();
 
-  speak(phrases);
+  speak(phrase);
 }
 
 guessButton.onclick = function(event) {
