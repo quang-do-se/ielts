@@ -21,6 +21,8 @@ var guessResult = document.querySelector('#guess-result');
 
 var voices = [];
 
+var result = '';
+
 function populateVoiceList() {
   voices = synth.getVoices()
     .filter(voice => voice.lang.match(/^en\-/) )
@@ -70,13 +72,31 @@ function speak(phrase){
 }
 
 function generatePhrase() {
+  let result = '';
+
   let address = '';
 
   thisStreetName = streetName[Math.floor(Math.random() * streetName.length)];
   thisStreetSuffix = streetSuffix[Math.floor(Math.random() * streetSuffix.length)];
 
-  address = "St. Anselm's S t . A n s e l m ' s";
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXY0123456789';
+  let charactersLength = characters.length;
+
+  for ( var i = 0; i < 3; i++ ) {
+    address += Math.floor(Math.random() * 10);
+  }
+
+  for ( var i = 0; i < 2; i++ ) {
+    address += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+
+  address += ", " + thisStreetName;
+  address += " " + thisStreetSuffix;
+  result = address;
   
+  address += ", " + thisStreetName.split('');
+
   let phone = '';
 
   for (let i = 0; i < 3; i++) {
@@ -84,18 +104,20 @@ function generatePhrase() {
   }
 
   phone += '-';
-  
+
   for (let i = 0; i < 3; i++) {
     phone += Math.floor(Math.random() * 10);
   }
 
   phone += '-';
-  
+
   for (let i = 0; i < 4; i++) {
     phone += Math.floor(Math.random() * 10);
   }
 
-  return address + ', ' + phone
+  result += '. ' + phone;
+  
+  return {'phrase': address + '. ' + phone, 'result': result};
 }
 
 pitch.onchange = function() {
@@ -105,9 +127,6 @@ pitch.onchange = function() {
 rate.onchange = function() {
   rateValue.textContent = rate.value;
 }
-
-var phrase = '';
-var result = '';
 
 newButton.onclick = function(event) {
   event.preventDefault();
@@ -120,10 +139,10 @@ newButton.onclick = function(event) {
   showResultButton.innerText = 'Show result';
   showResult = false;
 
-  phrase = generatePhrase();
-  result = '';
+  generator = generatePhrase();
 
-  speak(phrase);
+  result = generator['result'];
+  speak(generator['phrase']);
 }
 
 repeatButton.onclick = function(event) {
