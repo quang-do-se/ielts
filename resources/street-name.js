@@ -1954,8 +1954,6 @@ var streetName = [
   "Ryders",
   "Rye",
   "Ryedale",
-  "Rye Dale",
-  "Ryedale or Rye Dale",
   "Rysbrack",
   "Sadlers",
   "Saffron",
