@@ -33,6 +33,7 @@ var streetSuffix = [
   'Corner',
   'Cottages',
   'Course',
+  'Court',
   'Cove',
   'Creek',
   'Crescent',
