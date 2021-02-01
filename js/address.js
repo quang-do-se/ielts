@@ -22,10 +22,11 @@ var guessResult = document.querySelector('#guess-result');
 var voices = [];
 
 var result = '';
+var phrase = '';
 
 function populateVoiceList() {
   voices = synth.getVoices()
-    .filter(voice => voice.lang.match(/^en\-/) )
+    .filter(voice => voice.lang.match(/^en\-GB/) )
     .sort(function (a, b) {
       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
       if ( aname < bname ) return -1;
@@ -79,23 +80,23 @@ function generatePhrase() {
   thisStreetName = streetName[Math.floor(Math.random() * streetName.length)];
   thisStreetSuffix = streetSuffix[Math.floor(Math.random() * streetSuffix.length)];
 
-  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXY0123456789';
-  let charactersLength = characters.length;
+  // let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXY0123456789';
+  // let charactersLength = characters.length;
 
-  for ( var i = 0; i < 3; i++ ) {
-    address += Math.floor(Math.random() * 10);
-  }
+  // for ( var i = 0; i < 3; i++ ) {
+  //   address += Math.floor(Math.random() * 10);
+  // }
 
-  for ( var i = 0; i < 2; i++ ) {
-    address += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
+  // for ( var i = 0; i < 2; i++ ) {
+  //   address += characters.charAt(Math.floor(Math.random() * charactersLength));
+  // }
 
 
-  address += ", " + thisStreetName;
-  address += " " + thisStreetSuffix;
+  address += thisStreetName;
+  // address += " " + thisStreetSuffix;
   result = address;
   
-  address += ", " + thisStreetName.split('');
+  address += ". Spelling: " + thisStreetName.split('');
 
   let phone = '';
 
@@ -103,21 +104,24 @@ function generatePhrase() {
     phone += Math.floor(Math.random() * 10);
   }
 
-  phone += '-';
+  phone += ' ';
 
   for (let i = 0; i < 3; i++) {
     phone += Math.floor(Math.random() * 10);
   }
 
-  phone += '-';
+  phone += ' ';
 
   for (let i = 0; i < 4; i++) {
     phone += Math.floor(Math.random() * 10);
   }
 
-  result += '. ' + phone;
+  result += ' ' + phone;
   
-  return {'phrase': address + '. ' + phone, 'result': result};
+  return {
+    'phrase': address + ' Phone number: ' + phone,
+    'result': result
+  };
 }
 
 pitch.onchange = function() {
@@ -141,8 +145,10 @@ newButton.onclick = function(event) {
 
   generator = generatePhrase();
 
+  phrase = generator['phrase'];
   result = generator['result'];
-  speak(generator['phrase']);
+  
+  speak(phrase);
 }
 
 repeatButton.onclick = function(event) {
