@@ -96,7 +96,7 @@ function generatePhrase() {
   // address += " " + thisStreetSuffix;
   result = address;
   
-  address += ". Spelling: " + thisStreetName.split('');
+  address += ".\n Spelling: " + thisStreetName.split('');
 
   let phone = '';
 
@@ -119,7 +119,7 @@ function generatePhrase() {
   result += ' ' + phone;
   
   return {
-    'phrase': address + ' Phone number: ' + phone,
+    'phrase': address + ".\n Phone number: " + phone,
     'result': result
   };
 }
