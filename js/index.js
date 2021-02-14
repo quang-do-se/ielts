@@ -23,7 +23,7 @@ var voices = [];
 
 function populateVoiceList() {
   voices = synth.getVoices()
-    .filter(voice => voice.lang.match(/^en\-/))
+    .filter(voice => voice.lang.match(/^en\-GB/) )
     .sort(function (a, b) {
       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
       if ( aname < bname ) return -1;

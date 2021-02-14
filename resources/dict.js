@@ -976,5 +976,7 @@ var dict = [
   'depot',
   'lounge bar',
   'launch',
-  'quintessential'
+  'quintessential',
+  'chameleon',
+  'spiel'
 ]
