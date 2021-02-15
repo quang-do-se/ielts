@@ -162,7 +162,8 @@ var dict = [
   'specialist',
   'manager',
   'waitress',
-  'psychologist، volunteer',
+  'psychologist',
+  'volunteer',
   'craftsman',
   'work experience',
   'curriculum vitae',
@@ -959,5 +960,6 @@ var dict = [
   'launch',
   'quintessential',
   'chameleon',
-  'spiel'
+  'spiel',
+  'umpteenth'
 ]
