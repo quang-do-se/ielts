@@ -961,5 +961,9 @@ var dict = [
   'quintessential',
   'chameleon',
   'spiel',
-  'umpteenth'
+  'umpteenth',
+  'genealogical',
+  'prowl',
+  'crown',
+  'contemporary'
 ]
