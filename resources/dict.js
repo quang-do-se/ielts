@@ -965,5 +965,8 @@ var dict = [
   'genealogical',
   'prowl',
   'crown',
-  'contemporary'
+  'contemporary',
+  'apparel',
+  'in vogue',
+  'biomes'
 ]
