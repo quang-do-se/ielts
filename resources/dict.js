@@ -747,6 +747,7 @@ var dict = [
   'fungus',
   'stem',
   'roots',
+  'grass roots',
   'cluster',
   'fertilizer',
   'leaves',
@@ -968,5 +969,6 @@ var dict = [
   'contemporary',
   'apparel',
   'in vogue',
-  'biomes'
+  'biomes',
+  'buoy'
 ]
