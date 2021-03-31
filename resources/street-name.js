@@ -2486,5 +2486,22 @@ var streetName = [
   "York North",
   "Yorkshire",
   "York South",
-  "Zealand"
+  "Zealand",
+  "Melbourne",
+  "Brisbane",
+  "Canberra",
+  "Edinburgh",
+  "Glasgow",
+  "Cardiff",
+  "Dublin",
+  "Belfast",
+  "Vancouver",
+  "New Delhi",
+  "Calcuta",
+  "Budapest",
+  "Auckland",
+  "Lisbon",
+  "Buenos Aires",
+  "Sao Polo",
+  "Lima"
 ]
