@@ -1922,7 +1922,7 @@ var streetName = [
   "Rojack",
   "Roland",
   "Roland Houses",
-  "Roland Mans.",
+  "Roland Mans",
   "Roman",
   "Romer",
   "Romilly",
