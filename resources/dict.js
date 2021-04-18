@@ -1031,5 +1031,9 @@ var dict = [
   'curtness',
   'mortal and pestle',
   'closed reserve',
-  'catatonic state'
+  'catatonic state',
+  'banana bunch',
+  'gasp',
+  'foyer',
+  'cloakroom'
 ]

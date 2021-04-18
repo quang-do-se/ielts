@@ -2501,5 +2501,7 @@ var streetName = [
   "Lisbon",
   "Buenos Aires",
   "Sao Polo",
-  "Lima"
+  "Lima",
+  "Waratah",
+  "Perkins"
 ]
