@@ -1035,5 +1035,12 @@ var dict = [
   'banana bunch',
   'gasp',
   'foyer',
-  'cloakroom'
+  'cloakroom',
+  'anecdote',
+  'anecdotal',
+  'bonkers',
+  'outstrip',
+  'solidarity',
+  'mind-boggling',
+  'catatonic'
 ]

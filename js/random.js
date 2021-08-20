@@ -25,16 +25,14 @@ var result = '';
 var phrase = '';
 
 function populateVoiceList() {
-
   voices = synth.getVoices()
-    .filter(voice => voice.lang.match(/^en/) )
+    .filter(voice => voice.lang.match(/^en\-GB/) )
     .sort(function (a, b) {
       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
       if ( aname < bname ) return -1;
       else if ( aname == bname ) return 0;
       else return +1;
     });
-
   console.log(synth.getVoices());
   console.log(voices);
 }
@@ -48,7 +46,8 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 
 function speak(phrase){
   if (synth.speaking) {
-    synth.cancel();
+    console.error('speechSynthesis.speaking');
+    return;
   }
 
   let voice = voices[Math.floor(Math.random() * voices.length)];
@@ -98,7 +97,7 @@ function generatePhrase() {
 
   addressBySpaces = thisStreetName.split(' ');
   address += ".\n Spelling: ";
-
+  
   for (let i = 0; i < addressBySpaces.length; i++) {
     address += addressBySpaces[i].split('');
     if (i < addressBySpaces.length - 1) {
@@ -125,7 +124,7 @@ function generatePhrase() {
   }
 
   result += "\n" + phone;
-
+  
   return {
     'phrase': address + ".\n Phone number: " + phone,
     'result': result
@@ -155,7 +154,7 @@ newButton.onclick = function(event) {
 
   phrase = generator['phrase'];
   result = generator['result'];
-
+  
   speak(phrase);
 }
 
