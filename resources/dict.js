@@ -1042,5 +1042,6 @@ var dict = [
   'outstrip',
   'solidarity',
   'mind-boggling',
-  'catatonic'
+  'catatonic',
+  'harrowing'
 ]
