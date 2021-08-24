@@ -1043,5 +1043,8 @@ var dict = [
   'solidarity',
   'mind-boggling',
   'catatonic',
-  'harrowing'
+  'harrowing',
+  'reverend',
+  'tarnish',
+  'hubristic'
 ]
