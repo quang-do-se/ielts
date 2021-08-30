@@ -1046,5 +1046,6 @@ var dict = [
   'harrowing',
   'reverend',
   'tarnish',
-  'hubristic'
+  'hubristic',
+  'propensity'
 ]
